@@ -5,31 +5,32 @@
 
 1) In you debug consolle copy and paste this command:
 
-  masternode genkey
+             masternode genkey
 
   copy and use the answer when VPS ask your Private Key
 
 2) In you debug consolle copy and paste this command:
 
-  getaccountaddress MN1 (you can use MN1, MN2 and so on)
+            getaccountaddress MN1 (you can use MN1, MN2 and so on)
 
 3) Send 1,000 ULT at previous address (MN1)
 
 4) In you debug consolle copy and paste this command, you must wait for at least the beginning of the confirmations of the previous transaction :
 
-  masternode outputs (copy the answer you will use it when you will write the Masternode Configuration File)
+            masternode outputs (copy the answer you will use it when you will write the Masternode Configuration File)
 
 5) Go on your VPS and post the scrypt below
 
 6) go on menu tools and open Masternode Configuration File
   Compose your masternode's string like this
   
-  MN1 YourIpAddress:8420 YourPrivateKey TxCollateralTransaction Outputs
+            MN1 YourIpAddress:8420 YourPrivateKey TxCollateralTransaction Outputs
   
 7) Close your wallet and restart it
 
 8) Start your Masternode in debug consolle:
-  masternode start-alias MN1
+
+            masternode start-alias MN1
   
   ## VPS
 
