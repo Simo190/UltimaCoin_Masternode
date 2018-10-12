@@ -25,7 +25,10 @@ function download_node() {
   tar xvf $COIN_ZIP -C /usr/local/bin/
   mv /usr/local/bin
   tar xvf $COIN_ZIP
-  mv compiled/ultima* /usr/local/bin
+  mv /usr/local/bin/compiled/ultima* /usr/local/bin
+  cd /usr/local/bin
+  rm -r compiled
+  cd
   compile_error
   chmod +x $COIN_PATH$COIN_DAEMON $COIN_PATH$COIN_CLI
   cd - >/dev/null 2>&1
