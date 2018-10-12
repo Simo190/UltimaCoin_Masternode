@@ -22,14 +22,14 @@ function download_node() {
   cd $TMP_FOLDER
   wget -q $COIN_TGZ
   tar xvf $COIN_ZIP -C /usr/local/bin/
-  mv /usr/local/bin/compiled/ultima* /usr/local/bin
-  cd /usr/local/bin
-  rm -r compiled
-  cd
   compile_error
   chmod +x $COIN_PATH$COIN_DAEMON $COIN_PATH$COIN_CLI
   cd - >/dev/null 2>&1
   rm -r $TMP_FOLDER >/dev/null 2>&1
+  mv /usr/local/bin/compiled/ultima* /usr/local/bin
+  cd /usr/local/bin
+  rm -r compiled
+  cd
   clear
 }
 
