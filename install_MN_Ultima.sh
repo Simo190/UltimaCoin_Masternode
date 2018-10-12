@@ -21,10 +21,7 @@ function download_node() {
   echo -e "Prepare to download $COIN_NAME binaries"
   cd $TMP_FOLDER
   wget -q $COIN_TGZ
-  
   tar xvf $COIN_ZIP -C /usr/local/bin/
-  mv /usr/local/bin
-  tar xvf $COIN_ZIP
   mv /usr/local/bin/compiled/ultima* /usr/local/bin
   cd /usr/local/bin
   rm -r compiled
