@@ -7,7 +7,7 @@
 
              masternode genkey
 
-  copy and use the answer when VPS ask your Private Key
+  copy the ansewer, you will use it when VPS ask your Private Key
 
 2) In you debug consolle copy and paste this command:
 
