@@ -19,10 +19,10 @@
 
             masternode outputs (copy the answer you will use it when you will write the Masternode Configuration File)
 
-5) Go on your VPS and post the scrypt below
+5) Go on your ### VPS and post the scrypt below
 
-6) go on menu tools and open Masternode Configuration File
-  Compose your masternode's string like this
+6) Go on menu tools and open Masternode Configuration File
+  Compose your masternode's string like this:
   
             MN1 YourIpAddress:8420 YourPrivateKey TxCollateralTransaction Outputs
   
