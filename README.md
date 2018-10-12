@@ -7,7 +7,7 @@
 
              masternode genkey
 
-  copy the ansewer, you will use it when VPS ask your Private Key
+  copy the answer, you will use it when VPS ask your Private Key
 
 2) In you debug consolle copy and paste this command:
 
@@ -19,7 +19,8 @@
 
             masternode outputs (copy the answer you will use it when you will write the Masternode Configuration File)
 
-5) Go on your ## VPS ## and post the scrypt below
+5) Go on your ## VPS ## and post the scrypt below and wait for the end of the blockchain synchronization!!
+   You can check the syncro with this command in your VPS: ultima-cli getblockcount (when the block number is the same of your wallet desktop, the synchronization is ended!!
 
 6) Go on menu tools and open Masternode Configuration File
   Compose your masternode's string like this:
