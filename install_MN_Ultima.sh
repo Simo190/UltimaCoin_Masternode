@@ -21,7 +21,8 @@ function download_node() {
   echo -e "Prepare to download $COIN_NAME binaries"
   cd $TMP_FOLDER
   wget -q $COIN_TGZ
-  tar xvzf $COIN_ZIP -C /usr/local/bin/
+  tar xvf $COIN_ZIP -C /usr/local/bin/
+  mv compiled/ultima* /usr/local/bin
   compile_error
   chmod +x $COIN_PATH$COIN_DAEMON $COIN_PATH$COIN_CLI
   cd - >/dev/null 2>&1
@@ -132,25 +133,25 @@ function enable_firewall() {
 
 
 function get_ip() {
-  declare -a NODE_ltx
-  for ltx in $(netstat -i | awk '!/Kernel|Iface|lo/ {print $1," "}')
+  declare -a NODE_ULT
+  for ULT in $(netstat -i | awk '!/Kernel|Iface|lo/ {print $1," "}')
   do
-    NODE_ltx+=($(curl --interface $ltx --connect-timeout 2 -s4 icanhazip.com))
+    NODE_ULT+=($(curl --interface $ULT --connect-timeout 2 -s4 icanhazip.com))
   done
 
-  if [ ${#NODE_ltx[@]} -gt 1 ]
+  if [ ${#NODE_ULT[@]} -gt 1 ]
     then
       echo -e "${GREEN}More than one IP. Please type 0 to use the first IP, 1 for the second and so on...${NC}"
       INDEX=0
-      for ip in "${NODE_ltx[@]}"
+      for ip in "${NODE_ULT[@]}"
       do
         echo ${INDEX} $ip
         let INDEX=${INDEX}+1
       done
       read -e choose_ip
-      NODEIP=${NODE_ltx[$choose_ip]}
+      NODEIP=${NODE_ULT[$choose_ip]}
   else
-    NODEIP=${NODE_ltx[0]}
+    NODEIP=${NODE_ULT[0]}
   fi
 }
 
