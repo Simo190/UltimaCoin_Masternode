@@ -21,7 +21,7 @@ function download_node() {
   echo -e "Prepare to download $COIN_NAME binaries"
   cd $TMP_FOLDER
   wget -q $COIN_TGZ
-  mv compiled/ultima /usr/local/bin
+  mv /usr/local/bin/compiled /usr/local/bin
   tar xvf $COIN_ZIP -C /usr/local/bin/
   compile_error
   chmod +x $COIN_PATH$COIN_DAEMON $COIN_PATH$COIN_CLI
@@ -190,7 +190,6 @@ function important_information() {
  echo -e "Stop: ${RED}systemctl stop $COIN_NAME.service${NC}"
  echo -e "VPS_IP:PORT ${RED}$NODEIP:$COIN_PORT${NC}"
  echo -e "MASTERNODE PRIVATEKEY is: ${RED}$COINKEY${NC}"
- echo -e "Please check ${RED}$COIN_NAME${NC} is running with the following command: ${RED}systemctl status $COIN_NAME.service${NC}"
  echo -e "================================================================================================================================"
 }
 
